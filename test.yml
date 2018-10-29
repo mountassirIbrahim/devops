@@ -1,0 +1,12 @@
+- name: Installation pingo game
+  hosts: 192.168.59.103
+  remote_user: root
+  tasks:
+    - name: Install docker container
+      shell: docker pull centos
+    - name: Run docker container
+      shell: docker build -t myimage . 
+    - name: Stop docker container
+      shell: docker stop centos
+      #- name: Clone pingo game
+      #git: repo=https://github.com/mountassirIbrahim/monitoringProject.git dest=/opt/
