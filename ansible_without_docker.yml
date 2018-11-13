@@ -1,0 +1,16 @@
+- name: Installation pingo game
+  hosts: 192.168.59.103
+  remote_user: root
+  tasks:
+          - name: Install git
+            shell: apt-get install git && apt-get install nodejs
+          - name: create working dir
+            shell: mkdir -p /home/brahim/Documents/www
+          - name: go to working dir
+            shell: cd /home/brahim/Documents/www
+          - name: Clone pingo game
+            shell: git clone https://github.com/mountassirIbrahim/monitoringProject.git project
+          - name: build project
+            shell: cd project
+          - name: start the app
+            shell: npm start

@@ -1,0 +1,14 @@
+- name: Installation pingo game
+  hosts: 192.168.59.103
+  remote_user: root
+  tasks:
+    - name: Install docker container
+      shell: docker pull ubuntu
+    - name: Run docker container
+      shell: docker build -t burgergame -f /home/brahim/Documents/docker_test/dockerfile .
+    - name: Run game container
+      shell: docker run -p 8080:8000 -d burgergame
+    #- name: Stop docker container
+     # shell: docker stop centos
+      #- name: Clone pingo game
+      #git: repo=https://github.com/mountassirIbrahim/monitoringProject.git dest=/opt/
