@@ -1,5 +1,5 @@
 - name: Installation pingo game
-  hosts: 192.168.59.103
+  hosts: 
   remote_user: root
   tasks:
           - name: Install git
